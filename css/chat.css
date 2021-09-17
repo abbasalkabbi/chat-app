@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container .chat {
+  width: 300px;
+  height: 400px;
+  margin: auto;
+}
+
+.container .chat header {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0badc2;
+  padding: 5px;
+}
+
+.container .chat header img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: #dbdbdbdb solid 4px;
+}
+
+.container .chat header p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container .chat section {
+  width: 100%;
+  height: 80%;
+  overflow: auto;
+  background-color: #dbdbdbdb;
+  padding: 5px;
+}
+
+.container .chat section p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.container .chat section .friend {
+  background-color: #0badc2;
+}
+
+.container .chat section .you {
+  background-color: #FFF;
+  float: right;
+}
+
+.container .chat footer {
+  width: 100%;
+  min-height: 40px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: blue 1px solid;
+  background: #dbdbdbdb;
+}
+
+.container .chat footer .input {
+  float: left;
+  width: 80%;
+  height: 100%;
+}
+
+.container .chat footer .input .context {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+}
+
+.container .chat footer .input .context:focus {
+  border: 1px #000 solid;
+  outline: none;
+  background: #dbdbdbdb;
+}
+
+.container .chat footer button {
+  cursor: pointer;
+  float: right;
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container .chat footer button img {
+  width: 40px;
+}
+/*# sourceMappingURL=chat.css.map */

@@ -48,10 +48,9 @@ $users_data= mysqli_fetch_all($sq_users,MYSQLI_ASSOC);
                     ?>
                     <!---friend-->
                     <li>
-                    <a href="">
+                    <a href="chat.html?id=<?php echo $friend['id'];?>">
                         <img src="./php/image-user/<?php echo $friend['name_img'].'.'.$friend['ext_img']?>" alt="">
                         <p><?php echo htmlspecialchars($friend['name']);?></p>
-                        <input type="hidden" name="id-friend" value="<?php echo $friend['id'];?>">
                     </a>
                     </li>
                     <!---friend-->
