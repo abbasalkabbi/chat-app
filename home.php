@@ -5,9 +5,20 @@ session_start();
 if(!$_SESSION['id']){
     header("location: index");
 }
+$id=$_SESSION['id'];
 //get data from db
 $sq_users=mysqli_query($conn,"SELECT * FROM users");
 $users_data= mysqli_fetch_all($sq_users,MYSQLI_ASSOC);
+$your_user=mysqli_query($conn,"SELECT * FROM users WHERE id=$id");
+while($obj = mysqli_fetch_object($your_user)){
+    $name= $obj -> name; //hendle name
+    $name_img= $obj -> name_img; //hendle name_img
+    $ext_img= $obj -> ext_img; //hendle ext_img
+    
+    
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,10 +37,10 @@ $users_data= mysqli_fetch_all($sq_users,MYSQLI_ASSOC);
             <!--header-->
             <header>
                 <!--img-->
-                <img src="./src/3PWMlhY.jpg" alt="">
+                <img src="./php/image-user/<?php echo get_img($name_img,$ext_img);?>" alt="">
                 <!--img-END-->
                 <!--name p-->
-                <p>Abbas alkaabi</p>
+                <p><?php echo htmlspecialchars($name)?></p>
                 <!--name p-->
                 <span>log out</span>
             </header>
@@ -48,8 +59,8 @@ $users_data= mysqli_fetch_all($sq_users,MYSQLI_ASSOC);
                     ?>
                     <!---friend-->
                     <li>
-                    <a href="chat.html?id=<?php echo $friend['id'];?>">
-                        <img src="./php/image-user/<?php echo $friend['name_img'].'.'.$friend['ext_img']?>" alt="">
+                    <a href="chat/<?php echo $friend['id'];?>">
+                        <img src="./php/image-user/<?php echo get_img($friend['name_img'],$friend['ext_img'])?>" alt="">
                         <p><?php echo htmlspecialchars($friend['name']);?></p>
                     </a>
                     </li>

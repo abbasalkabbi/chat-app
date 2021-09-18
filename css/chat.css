@@ -12,7 +12,7 @@
 
 .container .chat {
   width: 300px;
-  height: 400px;
+  height: 500px;
   margin: auto;
 }
 
@@ -47,10 +47,18 @@
 
 .container .chat section {
   width: 100%;
-  height: 80%;
+  height: calc(80% - 40px);
   overflow: auto;
   background-color: #dbdbdbdb;
   padding: 5px;
+}
+
+.container .chat section .friend {
+  width: 100%;
+  min-height: 40px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .container .chat section p {
@@ -59,58 +67,72 @@
   width: fit-content;
   padding: 5px;
   border-radius: 10px;
-  margin: 5px;
 }
 
-.container .chat section .friend {
+.container .chat section .friend p {
   background-color: #0badc2;
+  float: left;
 }
 
 .container .chat section .you {
+  width: 100%;
+  min-height: 40px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.container .chat section .you p {
   background-color: #FFF;
   float: right;
 }
 
 .container .chat footer {
   width: 100%;
-  min-height: 40px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  border: blue 1px solid;
+  height: 40px;
   background: #dbdbdbdb;
+  border: #000 1px solid;
 }
 
-.container .chat footer .input {
-  float: left;
-  width: 80%;
+.container .chat footer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
   height: 100%;
 }
 
-.container .chat footer .input .context {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  resize: both;
-  min-height: 40px;
-  line-height: 20px;
+.container .chat footer .context {
+  width: 80%;
+  height: 100%;
+  border: none;
 }
 
-.container .chat footer .input .context:focus {
-  border: 1px #000 solid;
+.container .chat footer .context:focus {
   outline: none;
-  background: #dbdbdbdb;
 }
 
 .container .chat footer button {
-  cursor: pointer;
-  float: right;
   width: 20%;
-  height: 100%;
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-left: solid 1px #000;
 }
 
 .container .chat footer button img {
-  width: 40px;
+  width: 80%;
 }
 /*# sourceMappingURL=chat.css.map */
